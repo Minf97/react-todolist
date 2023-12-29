@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
+import type { RadioChangeEvent } from 'antd';
 import { Radio } from 'antd';
 import request from 'umi-request';
 
@@ -27,13 +28,20 @@ export default function Index() {
     request('/api/todos', { method: 'GET' });
   }, []);
 
-  const TodoItem = ({ todo, index }: { todo: Todo; index: number }) => {
+  const TodoItem = ({ todo }: { todo: Todo }) => {
+    const [flag, setFlag] = useState(todo.completed);
+    console.log(flag, todo.name);
+    
     return (
-      <div className={styles.todoItem} key={index}>
-        <Radio.Group name="radiogroup" defaultValue={1}>
-          <Radio value={todo.completed ? 1: 0} onChange={}></Radio>
+      <div className={styles.todoItem}>
+        <Radio.Group
+          name="radiogroup"
+          defaultValue={flag}
+          onChange={({ target: { checked } }: RadioChangeEvent) => setFlag(checked)}
+        >
+          <Radio checked={flag}></Radio>
         </Radio.Group>
-        <div className={`${styles.name} ${todo.completed && styles.strikethrough}`}>{todo.name}</div>
+        <div className={`${styles.name} ${flag && styles.strikethrough}`}>{todo.name}</div>
       </div>
     );
   };
@@ -42,7 +50,7 @@ export default function Index() {
     <>
       <div className={styles.container}>
         {todos.map((item, index) => (
-          <TodoItem todo={item} index={index} />
+          <TodoItem todo={item} key={index} />
         ))}
       </div>
     </>
