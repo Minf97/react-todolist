@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import type { RadioChangeEvent } from 'antd';
-import { Radio } from 'antd';
+import { Radio, ConfigProvider } from 'antd';
 import request from 'umi-request';
 
 export default function Index() {
@@ -31,16 +31,24 @@ export default function Index() {
   const TodoItem = ({ todo }: { todo: Todo }) => {
     const [flag, setFlag] = useState(todo.completed);
     console.log(flag, todo.name);
-    
+
     return (
       <div className={styles.todoItem}>
-        <Radio.Group
-          name="radiogroup"
-          defaultValue={flag}
-          onChange={({ target: { checked } }: RadioChangeEvent) => setFlag(checked)}
+        <ConfigProvider
+          theme={{
+            token: {
+                colorPrimary: '#7b68ee'
+            }
+          }}
         >
-          <Radio checked={flag}></Radio>
-        </Radio.Group>
+          <Radio.Group
+            name="radiogroup"
+            defaultValue={flag}
+            onChange={({ target: { checked } }: RadioChangeEvent) => setFlag(checked)}
+          >
+            <Radio checked={flag} onClick={() => console.log(flag)}></Radio>
+          </Radio.Group>
+        </ConfigProvider>
         <div className={`${styles.name} ${flag && styles.strikethrough}`}>{todo.name}</div>
       </div>
     );
