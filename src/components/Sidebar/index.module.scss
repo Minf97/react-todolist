@@ -1,14 +1,24 @@
-.menu {
-  width: $side-width;
-  height: 100%;
-  color: $color-h2;
-  font-weight: bold;
-  font-size: 15px;
-  display: inline-block;
+.container {
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-.circle {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+.txt {
+  margin: 20px 0;
+  letter-spacing: 1px;
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+}
+
+.todoTitle{
+  font-size: 16px;
+  font-weight: 700;
 }

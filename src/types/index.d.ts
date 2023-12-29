@@ -1,8 +1,7 @@
 
 
-interface DataType {
+interface Todo {
   id: number;
   name: string;
-  age: number;
-  address: string;
+  completed: boolean;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import Body from '@/components/Body';
+import ChatBar from '@/components/ChatBar';
 import styles from './index.module.scss';
 
 function Index() {
@@ -10,13 +9,12 @@ function Index() {
   return (
     <>
       <div className={styles.container}>
-        <Header></Header>
         <div className="flex">
-          <div className={`flex-1 ${styles.sidebar}`}>
+          <div className={`${styles.sidebar}`}>
             <Sidebar></Sidebar>
           </div>
           <div className={styles.body}>
-            <Body></Body>
+            <ChatBar></ChatBar>
           </div>
         </div>
       </div>

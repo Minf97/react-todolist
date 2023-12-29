@@ -4,11 +4,13 @@
 }
 
 .sidebar {
+  width: 40vw;
   height: calc(100vh - 22px);
 }
 
 .body {
   padding: $padding-body $padding-body 0 $padding-body;
+  width: 60vw;
   height: calc(100vh - 22px);
-  flex: 4;
+  background-color: #fafafc;
 }

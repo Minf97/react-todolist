@@ -1,0 +1,44 @@
+.todoItem {
+  @apply flex;
+  margin: 15px 0;
+}
+
+.name {
+    // transition: all 1s ease-out;
+    opacity: 1;
+}
+.strikethrough {
+    animation: tranform1 0.5s linear forwards;
+    
+}
+
+@keyframes tranform1 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50%, -100%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+// .strikethrough::after {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 50%;
+//   height: 1px;
+//   background-color: black;
+//   animation: strike 1s linear forwards;
+//   transform-origin: center;
+// }
+
+// @keyframes strike {
+//   0% {
+//     transform: scaleX(0);
+//   }
+//   100% {
+//     transform: scaleX(1);
+//   }
+// }
