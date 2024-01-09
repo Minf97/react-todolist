@@ -3,12 +3,24 @@ import styles from './index.module.scss';
 import TagList from '@/components/TagList';
 import CheckList from '@/components/CheckList';
 
-import { AllApplication, Comment, Peoples, Config, Add } from '@icon-park/react';
+import { Moon, SunOne } from '@icon-park/react';
+
+const ThemeModeIcon = ({ mode = true }) => {
+  return mode ? (
+    <SunOne theme="outline" size="20" fill="#787486" strokeWidth={3} />
+  ) : (
+    <Moon theme="outline" size="20" fill="#787486" strokeWidth={3} />
+  );
+};
 
 export default function Index() {
   return (
     <>
       <div className={styles.container}>
+        {/* 暗夜模式/设置 */}
+        <div className="flex justify-end">
+          <ThemeModeIcon mode={true}></ThemeModeIcon>
+        </div>
         {/* 标签栏 */}
         <TagList></TagList>
         {/* 文字 */}

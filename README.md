@@ -62,7 +62,7 @@ npm run dev
 - 构建工具：vite
 - 框架和语言：electron + react + typescript
 - hooks： [ahooks](https://ahooks.js.org/zh-CN/)
-- 状态管理：[hox](https://hox.js.org/zh/guide/quick-start)
+- 状态管理：~~[hox](https://hox.js.org/zh/guide/quick-start)~~ [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - 第三方库：
   - [tailwind原子CSS](https://tailwindcss.com/)
   - [frame motion动效库](https://www.framer.com/motion/)
@@ -81,3 +81,4 @@ npm run dev
 
 # 踩坑记录
 1. 调整`antdIcon`大小需要调整`fontSize`而不是宽高
+2. 如何高度自定义修改antd5样式？`:global` `魔改`
