@@ -1,19 +1,42 @@
 .todoItem {
   display: flex;
   margin: 15px 0;
+
+  :global {
+    .ant-radio-inner::after {
+      width: 28px !important;
+      height: 28px !important;
+      margin-block-start: -14px;
+      margin-inline-start: -14px;
+      background-color: #7b68ee !important;
+    }
+
+    .ant-radio-inner {
+      border-color: #7b68ee !important;
+      background-color: #fff !important;
+    }
+  }
+  
 }
 
 .name {
-    // transition: all 1s ease-out;
-    opacity: 1;
+  // transition: all 1s ease-out;
+  opacity: 1;
 }
 
-
+.radio {
+  .ant-radio-inner::after {
+    width: 28px !important;
+    height: 28px !important;
+    margin-block-start: -14px;
+    margin-inline-start: -14px;
+    background-color: #7b68ee !important;
+  }
+}
 
 .strikethrough {
-    position: relative;
+  position: relative;
 }
-
 
 .strikethrough::after {
   content: '';

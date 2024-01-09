@@ -37,7 +37,7 @@ export default function Index() {
         <ConfigProvider
           theme={{
             token: {
-                colorPrimary: '#7b68ee'
+              colorPrimary: '#7b68ee' 
             }
           }}
         >
@@ -46,7 +46,7 @@ export default function Index() {
             defaultValue={flag}
             onChange={({ target: { checked } }: RadioChangeEvent) => setFlag(checked)}
           >
-            <Radio checked={flag} onClick={() => console.log(flag)}></Radio>
+            <Radio checked={flag} onClick={() => console.log(flag)} className={styles.radio}></Radio>
           </Radio.Group>
         </ConfigProvider>
         <div className={`${styles.name} ${flag && styles.strikethrough}`}>{todo.name}</div>

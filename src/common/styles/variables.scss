@@ -19,8 +19,10 @@ $padding-body: 30px;  // 边距
 }
 
 // .ant-radio-inner::after {
-//   width: 14px !important;
-//   height: 14px !important;
+//   width: 28px !important;
+//   height: 28px !important;
+//   margin-block-start: -14px;
+//   margin-inline-start: -14px;
 //   background-color: #7b68ee !important;
 // }
 
