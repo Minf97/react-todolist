@@ -2,20 +2,20 @@ import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import ChatBar from '@/components/ChatBar';
 import styles from './index.module.scss';
+import { Layout } from 'antd';
 
 function Index() {
   console.log(window.ipcRenderer);
-
   return (
     <>
       <div className={styles.container}>
         <div className="flex">
-          <div className={`${styles.sidebar}`}>
+          <Layout className={styles.sidebar}>
             <Sidebar></Sidebar>
-          </div>
-          <div className={styles.body}>
+          </Layout>
+          <Layout className={styles.body}>
             <ChatBar></ChatBar>
-          </div>
+          </Layout>
         </div>
       </div>
     </>

@@ -36,8 +36,9 @@ export default function Index() {
       <div className={styles.todoItem}>
         <ConfigProvider
           theme={{
+            cssVar: true,
             token: {
-              colorPrimary: '#7b68ee' 
+              // colorPrimary: '#7b68ee' 
             }
           }}
         >

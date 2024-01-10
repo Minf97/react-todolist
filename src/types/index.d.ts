@@ -5,3 +5,5 @@ interface Todo {
   name: string;
   completed: boolean;
 }
+
+type ThemeMode = "light" | "dark"

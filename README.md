@@ -78,6 +78,8 @@ npm run dev
 - [antd与tailwind样式冲突](https://kong.vision/react/antd%E4%B8%8Etailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/)
 - [electron圆角](https://www.jianshu.com/p/c4bb54f4962c)
 - [antdButton自定义波纹](https://ant-design.antgroup.com/components/config-provider-cn#config-provider-demo-wave)
+- [antd切换暗色主题](https://ant-design.antgroup.com/docs/react/customize-theme-cn#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8F) antd5想方便切换主题的话，要尽量避免使用div，要使用antd官方的布局盒子，这样就只需要专注CSS变量即可，不用做多余的操作
+- [zustand入门(上)](https://juejin.cn/post/7177216308843380797?searchId=202401101048001D1890ABA4F37EF88767)  [zustand入门(下)](https://juejin.cn/post/7182462103297458236?searchId=202401101048001D1890ABA4F37EF88767)
 
 # 踩坑记录
 1. 调整`antdIcon`大小需要调整`fontSize`而不是宽高

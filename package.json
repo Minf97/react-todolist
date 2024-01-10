@@ -41,13 +41,13 @@
     "antd": "^5.11.2",
     "electron-is-dev": "^2.0.0",
     "framer-motion": "^10.16.5",
-    "hox": "^2.1.1",
     "react": "latest",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
     "sass": "^1.69.5",
     "umi-request": "^1.4.0",
-    "vite": "latest"
+    "vite": "latest",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@types/node": "^17.0.22",

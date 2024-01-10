@@ -2,20 +2,20 @@
   display: flex;
   margin: 15px 0;
 
-  :global {
-    .ant-radio-inner::after {
-      width: 28px !important;
-      height: 28px !important;
-      margin-block-start: -14px;
-      margin-inline-start: -14px;
-      background-color: #7b68ee !important;
-    }
+  // :global {
+  //   .ant-radio-inner::after {
+  //     width: 28px !important;
+  //     height: 28px !important;
+  //     margin-block-start: -14px;
+  //     margin-inline-start: -14px;
+  //     background-color: #7b68ee !important;
+  //   }
 
-    .ant-radio-inner {
-      border-color: #7b68ee !important;
-      background-color: #fff !important;
-    }
-  }
+  //   .ant-radio-inner {
+  //     border-color: #7b68ee !important;
+  //     background-color: #fff !important;
+  //   }
+  // }
   
 }
 

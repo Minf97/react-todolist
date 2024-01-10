@@ -18,13 +18,7 @@ $padding-body: 30px;  // 边距
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-// .ant-radio-inner::after {
-//   width: 28px !important;
-//   height: 28px !important;
-//   margin-block-start: -14px;
-//   margin-inline-start: -14px;
-//   background-color: #7b68ee !important;
-// }
+
 
 .flex-center {
   @apply flex items-center justify-center;

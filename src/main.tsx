@@ -1,31 +1,38 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import { globalRouters } from './router';
 import { RouterProvider } from 'react-router-dom';
-import { HoxRoot } from 'hox';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider, theme, App } from 'antd';
+import { useStore } from './store/index';
 import AppBar from '@/components/AppBar';
 import './index.scss';
 
-ReactDOM.render(
-  <React.StrictMode>
+const MyApp = () => {
+  const { themeMode } = useStore();
+  return (
     <ConfigProvider
       theme={{
+        cssVar: true,
+        algorithm: themeMode === 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
         token: {
           // 分割线
           colorSplit: '#DBDBDB'
         }
       }}
     >
-      <HoxRoot>
+      <React.StrictMode>
         <div id="win">
           {/* Bar顶部 */}
           {window.Main && <AppBar />}
           {/* 路由 */}
           <RouterProvider router={globalRouters}></RouterProvider>
         </div>
-      </HoxRoot>
+      </React.StrictMode>
     </ConfigProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  );
+};
+createRoot(document.getElementById('root')).render(
+  <App>
+    <MyApp />
+  </App>
 );
