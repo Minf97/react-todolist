@@ -1,21 +1,22 @@
 .todoItem {
   display: flex;
   margin: 15px 0;
+  color: var(--ant-color-primary);
 
-  // :global {
-  //   .ant-radio-inner::after {
-  //     width: 28px !important;
-  //     height: 28px !important;
-  //     margin-block-start: -14px;
-  //     margin-inline-start: -14px;
-  //     background-color: #7b68ee !important;
-  //   }
+  :global {
+    .ant-radio-inner::after {
+      width: calc(2px * var(--ant-radio-radio-size));
+      height: calc(2px * var(--ant-radio-radio-size));
+      margin-block-start: calc(2px * var(--ant-radio-radio-size) / -2);
+      margin-inline-start: calc(2px * var(--ant-radio-radio-size) / -2);
+      background-color: #7b68ee !important;
+    }
 
-  //   .ant-radio-inner {
-  //     border-color: #7b68ee !important;
-  //     background-color: #fff !important;
-  //   }
-  // }
+    .ant-radio-inner {
+      border-color: #7b68ee !important;
+      background-color: #fff !important;
+    }
+  }
   
 }
 

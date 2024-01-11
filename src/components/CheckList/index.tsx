@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import type { RadioChangeEvent } from 'antd';
-import { Radio, ConfigProvider } from 'antd';
+import { Radio, ConfigProvider, Typography } from 'antd';
 import request from 'umi-request';
-
+const {Text} = Typography
 export default function Index() {
   const [todos, setTodos] = useState([
     {
@@ -50,7 +50,7 @@ export default function Index() {
             <Radio checked={flag} onClick={() => console.log(flag)} className={styles.radio}></Radio>
           </Radio.Group>
         </ConfigProvider>
-        <div className={`${styles.name} ${flag && styles.strikethrough}`}>{todo.name}</div>
+        <Text className={`${styles.name} ${flag && styles.strikethrough}`}>{todo.name}</Text>
       </div>
     );
   };
