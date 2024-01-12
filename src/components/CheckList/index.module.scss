@@ -25,16 +25,6 @@
   opacity: 1;
 }
 
-.radio {
-  .ant-radio-inner::after {
-    width: 28px !important;
-    height: 28px !important;
-    margin-block-start: -14px;
-    margin-inline-start: -14px;
-    background-color: #7b68ee !important;
-  }
-}
-
 .strikethrough {
   position: relative;
 }
@@ -49,6 +39,12 @@
   background-color: black;
   animation: strike 0.2s linear forwards;
   transform-origin: center;
+}
+
+.todoTitle{
+  font-size: 16px;
+  font-weight: 700;
+  // color: var(--ant-color-text);
 }
 
 @keyframes strike {

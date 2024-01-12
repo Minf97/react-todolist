@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
-import type { RadioChangeEvent } from 'antd';
-import { Radio, ConfigProvider, Typography } from 'antd';
+import { Button, Flex, Radio, ConfigProvider, Typography } from 'antd';
 import request from 'umi-request';
-const {Text} = Typography
-export default function Index() {
+import { AddThree } from '@icon-park/react';
+
+const { Text } = Typography;
+export default () => {
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -30,26 +31,13 @@ export default function Index() {
 
   const TodoItem = ({ todo }: { todo: Todo }) => {
     const [flag, setFlag] = useState(todo.completed);
-    console.log(flag, todo.name);
-
+    const onClick = () => {
+      console.log(flag);
+      setFlag(!flag);
+    };
     return (
       <div className={styles.todoItem}>
-        <ConfigProvider
-          theme={{
-            cssVar: true,
-            token: {
-              // colorPrimary: '#7b68ee' 
-            }
-          }}
-        >
-          <Radio.Group
-            name="radiogroup"
-            defaultValue={flag}
-            onChange={({ target: { checked } }: RadioChangeEvent) => setFlag(checked)}
-          >
-            <Radio checked={flag} onClick={() => console.log(flag)} className={styles.radio}></Radio>
-          </Radio.Group>
-        </ConfigProvider>
+        <Radio checked={flag} onClick={onClick}></Radio>
         <Text className={`${styles.name} ${flag && styles.strikethrough}`}>{todo.name}</Text>
       </div>
     );
@@ -57,6 +45,16 @@ export default function Index() {
 
   return (
     <>
+      {/* 标题 */}
+      <Flex className="justify-between">
+        <Text className={styles.todoTitle}>todolist</Text>
+        <Button
+          className="w-8 flex-center"
+          icon={<AddThree theme="outline" size="20" fill="#787486" strokeWidth={3} />}
+          type="text"
+        />
+      </Flex>
+      {/* todolist列表 */}
       <div className={styles.container}>
         {todos.map((item, index) => (
           <TodoItem todo={item} key={index} />
@@ -64,4 +62,4 @@ export default function Index() {
       </div>
     </>
   );
-}
+};

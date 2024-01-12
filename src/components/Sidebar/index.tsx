@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import TagList from '@/components/TagList';
 import CheckList from '@/components/CheckList';
 import { useStore } from '@/store';
-import { Layout, Flex, Typography } from 'antd';
+import { Flex, Typography, Button } from 'antd';
 import { Moon, SunOne } from '@icon-park/react';
 
 const { Text } = Typography;
@@ -11,20 +11,18 @@ const { Text } = Typography;
 const ThemeModeIcon = () => {
   const { themeMode } = useStore();
   return themeMode === 'dark' ? (
-    <SunOne
+    <Button
+      className="w-8 flex-center"
       onClick={() => useStore.setState({ themeMode: 'light' })}
-      theme="outline"
-      size="20"
-      fill="#787486"
-      strokeWidth={3}
+      icon={<SunOne theme="outline" size="20" fill="#787486" strokeWidth={3} />}
+      type="text"
     />
   ) : (
-    <Moon
+    <Button
+      className="w-8 flex-center"
       onClick={() => useStore.setState({ themeMode: 'dark' })}
-      theme="outline"
-      size="20"
-      fill="#787486"
-      strokeWidth={3}
+      icon={<Moon theme="outline" size="20" fill="#787486" strokeWidth={3} />}
+      type="text"
     />
   );
 };
@@ -45,7 +43,6 @@ export default function Index() {
           <Text className={styles.content}>在这里可以总览并修改你的todolist~ </Text>
         </Flex>
         {/* todolist */}
-        <Text className={styles.todoTitle}>todolist</Text>
         <CheckList></CheckList>
       </div>
     </>
