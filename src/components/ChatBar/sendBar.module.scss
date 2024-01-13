@@ -1,0 +1,28 @@
+.toolBar {
+  padding: 0 $padding-body;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.inputBar {
+  padding: 0 $padding-body;
+  box-sizing: border-box;
+  max-height: 300px;
+
+  .textBox {
+    padding-right: calc(10px + 88px + 5px);
+  }
+}
+
+:global {
+  // 分割线
+  .ant-divider-horizontal {
+    margin: 0 0 10px 0 !important;
+  }
+}
+
+.submit {
+    position: absolute;
+    bottom: 10px;
+    right: calc(10px + $padding-body);
+}

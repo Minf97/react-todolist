@@ -85,3 +85,8 @@ npm run dev
 # 踩坑记录
 1. 调整`antdIcon`大小需要调整`fontSize`而不是宽高
 2. 如何高度自定义修改antd5样式？`:global` `魔改`
+3. 如何在 `Button` 中加入两个`Icon` ？ 他的Icon属性接收一个`reactNode`
+4. 关于toolbar的封装使用
+5. 全局CP组件注入色阶
+6. [使用designToken变量](https://ant-design.antgroup.com/docs/react/customize-theme-cn#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8F)
+7. [太帅了！自动生成颜色算法](https://ant-design.antgroup.com/docs/react/customize-theme-cn#%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8Fseed-token)

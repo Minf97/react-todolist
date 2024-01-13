@@ -1,0 +1,16 @@
+
+
+.toolBar {
+    padding: 0 $padding-body;
+    box-sizing: border-box;
+    // margin-bottom: 10px;
+
+    :global {
+        // 工具栏的button
+        .ant-btn-sm {
+            padding-inline-start: calc(var(--ant-control-height-sm) / 2.6) !important;
+            padding-inline-end: calc(var(--ant-control-height-sm) / 2.6) !important;
+        }
+    }
+}
+

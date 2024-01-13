@@ -14,9 +14,17 @@ const MyApp = () => {
       theme={{
         cssVar: true,
         algorithm: themeMode === 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
+        components: {
+          Input: {
+            activeBorderColor: '#7b68ee',
+            algorithm: true, // 启用算法
+          }
+        },
         token: {
+          colorPrimary: '7b68ee',
           // 分割线
-          colorSplit: '#DBDBDB'
+          colorSplit: '#DBDBDB',
+          // colorPrimaryHover: '#7b68ee',
         }
       }}
     >
