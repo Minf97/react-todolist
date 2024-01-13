@@ -1,24 +1,28 @@
 import React from 'react';
 import styles from './sendBar.module.scss';
-import { Input, Flex, Divider, Button } from 'antd';
+import { Input, Flex, Divider, Button, theme } from 'antd';
 import { Config, Magic, Send } from '@icon-park/react';
 import ToolBar from '../toolBar';
+import { useStore } from '@/store';
 
 const { TextArea } = Input;
 
 export default () => {
+  const { token } = theme.useToken();
+  const { themeMode } = useStore();
+  console.log(token, 233);
   const btnList = [
     {
-      icon: <Config theme="outline" size="16" fill="#2e2e2e" strokeWidth={3} />,
+      icon: <Config theme="outline" size="16" fill={themeMode === 'dark' ? '#787486' : '#2e2e2e'} strokeWidth={3} />,
       text: '设置'
     },
     {
-      icon: <Magic theme="outline" size="16" fill="#2e2e2e" strokeWidth={3} />,
+      icon: <Magic theme="outline" size="16" fill={themeMode === 'dark' ? '#787486' : '#2e2e2e'} strokeWidth={3} />,
       text: '快捷指令'
     }
   ];
   return (
-    <Flex vertical style={{ paddingBottom: '30px', width: '100%', backgroundColor: '#fafafc' }}>
+    <Flex vertical style={{ paddingBottom: '30px', width: '100%', backgroundColor: token.Layout?.bodyBg }}>
       <Divider></Divider>
       {/* 工具栏 */}
       <div style={{ marginBottom: '10px' }}>

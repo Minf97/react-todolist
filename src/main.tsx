@@ -23,7 +23,7 @@ const MyApp = () => {
         token: {
           colorPrimary: '7b68ee',
           // 分割线
-          colorSplit: '#DBDBDB',
+          // colorSplit: '#DBDBDB',
           // colorPrimaryHover: '#7b68ee',
         }
       }}
@@ -39,6 +39,7 @@ const MyApp = () => {
     </ConfigProvider>
   );
 };
+// @ts-ignore
 createRoot(document.getElementById('root')).render(
   <App>
     <MyApp />

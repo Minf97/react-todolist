@@ -1,14 +1,17 @@
 import React, { useRef, useEffect, useMemo } from 'react';
 import styles from './index.module.scss';
-import { Input, Flex, Button, Avatar } from 'antd';
+import { Input, Flex, Button, Avatar, theme } from 'antd';
 import GptIcon from '@/common/images/gpt.png';
-import { useHover, useMap } from 'ahooks';
+import { useHover } from 'ahooks';
 import { EditTwo, Copy, DeleteThemes } from '@icon-park/react';
 import dayjs from 'dayjs';
 import SendBar from './sendBar';
 import ToolBar from '../toolBar';
+import { useStore } from '@/store';
 
 const MessageBox = ({ message }: { message: Message }) => {
+  const { themeMode } = useStore();
+
   const MyChat = ({ message }: { message: Message }) => {
     const avatarRef = useRef(null);
     const isHovering = useHover(avatarRef);
@@ -19,15 +22,27 @@ const MessageBox = ({ message }: { message: Message }) => {
         <Flex vertical className={`${styles.contentBox} justify-end`} style={{ alignItems: 'flex-end' }}>
           <Button className={`w-8 flex-center ${styles.myAvatar}`}>😀</Button>
           {/* 内容框 */}
-          <div className={styles.content}>{message.content}</div>
+          <div
+            className={styles.content}
+            style={{
+              backgroundColor: themeMode === 'dark' ? '#1c1c1c' : '#f2f2f2',
+              color: themeMode === 'dark' ? '#c9d1d9' : '#000',
+              borderColor: themeMode === 'dark' ? '#3c3c3c' : '#dedede'
+            }}
+          >
+            {message.content}
+          </div>
           {/* 时间 */}
-          <div className={`${styles.time} text-right`}>{time}</div>
+          <div className={`${styles.time} text-right`} style={{ color: themeMode === 'dark' ? '#3c3c3c' : '#ccc' }}>{time}</div>
         </Flex>
       </Flex>
     );
   };
 
   const OtherChat = ({ message }: { message: Message }) => {
+    const { token } = theme.useToken();
+    console.log(token);
+
     const avatarRef = useRef(null);
     const isHovering = useHover(avatarRef);
     const time = dayjs(message.timeStamp).format('YYYY-MM-DD HH:mm:ss');
@@ -52,17 +67,15 @@ const MessageBox = ({ message }: { message: Message }) => {
         </Flex>
       );
     };
-    const styObj = {
-      display: isHovering ? 'block' : 'none',
-      transition: 'all ease 0.1s'
-    };
     const toolList = [
       {
-        icon: <Copy theme="outline" size="16" fill="#2e2e2e" strokeWidth={3} />,
+        icon: <Copy theme="outline" size="16" fill={themeMode === 'dark' ? '#787486' : '#2e2e2e'} strokeWidth={3} />,
         text: '复制'
       },
       {
-        icon: <DeleteThemes theme="outline" size="16" fill="#2e2e2e" strokeWidth={3} />,
+        icon: (
+          <DeleteThemes theme="outline" size="16" fill={themeMode === 'dark' ? '#787486' : '#2e2e2e'} strokeWidth={3} />
+        ),
         text: '删除'
       }
     ];
@@ -82,9 +95,20 @@ const MessageBox = ({ message }: { message: Message }) => {
 
         <Flex vertical className={styles.contentBox} style={{ justifyContent: 'flex-start', alignItems: 'flex-start' }}>
           {/* 内容框 */}
-          <div className={styles.content}>{message.content}</div>
+          <div
+            className={styles.content}
+            style={{
+              backgroundColor: themeMode === 'dark' ? '#1c1c1c' : '#f2f2f2',
+              color: themeMode === 'dark' ? '#c9d1d9' : '#000',
+              borderColor: themeMode === 'dark' ? '#3c3c3c' : '#dedede'
+            }}
+          >
+            {message.content}
+          </div>
           {/* 时间 */}
-          <div className={`${styles.time} text-right`}>{time}</div>
+          <div className={`${styles.time} text-right`} style={{ color: themeMode === 'dark' ? '#3c3c3c' : '#ccc' }}>
+            {time}
+          </div>
         </Flex>
       </Flex>
     );
